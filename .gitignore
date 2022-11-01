@@ -1,0 +1,13 @@
+node_modules/
+src/
+vendor/
+utilidades/
+admin.txt
+gulpfile.js
+package.json
+package-lock.json
+.env
+scriptsBD.sql
+reporte.php
+prueba.txt
+HerokuDB

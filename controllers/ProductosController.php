@@ -249,7 +249,11 @@ class ProductosController{
         $producto = new Productos();
         $alertas =[];
        
+       if($_SERVER['REQUEST_METHOD'] === 'GET'){
         $producto = $producto->find($_GET['id']); //tomo el producto encontrado con el id enviado por ger desde la pagina admin
+
+        }
+
         // if($_SERVER['REQUEST_METHOD'] === 'GET'){
         //     $producto = $producto->find($_GET['id']);
         // }
@@ -296,10 +300,10 @@ class ProductosController{
 
                
 
-            }
+        }
 
-            isAuth();
-            isAdmin();
+        isAuth();
+        isAdmin();
 
             //La vista tiene que estar por fuera del condicional request method para que se muestre
             $router->render('productos/uploadProducto',['producto' => $producto, 'alertas' => $alertas]);   //paso datos o variables a la vista en un arreglo asociativo

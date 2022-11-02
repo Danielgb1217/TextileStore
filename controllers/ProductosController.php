@@ -34,6 +34,10 @@ class ProductosController{
         //y que no se borren los datos del formulario en el html cuando actualice
         $alertas =[];
 
+        if($_SERVER['REQUEST_METHOD'] === 'GET'){
+            header('Location/:subirProducto');
+        }
+
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
                 //Aqui puedo pasar las validaciones necesarias
                 $producto->sincronizar($_POST);          

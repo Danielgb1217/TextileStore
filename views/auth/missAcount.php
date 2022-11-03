@@ -7,15 +7,16 @@
 
 <?php if($error) return null; ?>
 
-<form class="formulario" method="POST" >
+<form class="formulario, centrar" method="POST" action="/missAcount">
 
     <div class="campo">      
         
         <label for="password">Password</label>  <!--El name es lo que vamos a enviar al metodo post -->
+        <br/>
         <input type="password" 
         id="password" 
         name="password" 
-        placeholder="NUevo Password"/> <!--con esto mantengo los datos en la vista a pesar de tener objeto en memoria y actualizar -->
+        placeholder="Nuevo Password"/> <!--con esto mantengo los datos en la vista a pesar de tener objeto en memoria y actualizar -->
     </div>
 
     <input type="submit" value="Restablecer" class="boton" />

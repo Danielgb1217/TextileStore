@@ -84,7 +84,7 @@ class LoginController{
                         $email = new Email($usuario->email, $usuario->nombre, $usuario->token);                       
                         $email->enviarInstrucciones();
 
-                        Usuario::setAlerta('exito', 'hemos enviado un email con los pasos para recuperar la cuenta');
+                        Usuario::setAlerta('exito', 'Revisa tu bandeja de entrada, Te hemos enviado un email con los pasos para recuperar tu cuenta');
                        
                     }else{
                         Usuario::setAlerta('error', "el usuario no existe");
@@ -101,6 +101,7 @@ class LoginController{
         public static function missAcount(Router $router){
             $alertas = [];
             $error = false;
+            $usuario = new Usuario();
 
 
             if($_SERVER['REQUEST_METHOD'] === 'POST'){ //leer el nuevo password y guradarlo
@@ -117,25 +118,26 @@ class LoginController{
                         $error = true;
                     }
 
-                }               
-                
-                
-                $password = new Usuario($_POST);
-                $alertas =  $password->validarPassword();
+                }else{
 
-              //UNA COSA ES MI USUARIO ESPEJ DE LA BASE DE DATOS-->$usuario<-- Y OTRA ES EL USUARIO CREADO DEL FORMULARIO POST -->$password<--
-              if(empty($alertas)){    //Si pasamos la validadcion el arreglo de alertas estara vacio y podemos hashear el password
-                $usuario->password = ' ';  //borro el password viejo
-     
-                $usuario->password = $password->password;     //sobreescribo el passwor que e traigo por el metodo post del frm
-                $usuario->hashPassword();
-                $usuario->token = null;
+                    $password = new Usuario($_POST);
+                    $alertas =  $password->validarPassword();
+    
+                    //UNA COSA ES MI USUARIO ESPEJ DE LA BASE DE DATOS-->$usuario<-- Y OTRA ES EL USUARIO CREADO DEL FORMULARIO POST -->$password<--
+                    if(empty($alertas)){    //Si pasamos la validadcion el arreglo de alertas estara vacio y podemos hashear el password
+                        $usuario->password = ' ';  //borro el password viejo
+            
+                        $usuario->password = $password->password;     //sobreescribo el passwor que e traigo por el metodo post del frm
+                        $usuario->hashPassword();
+                        $usuario->token = null;
+    
+                        $resultado = $usuario->guardar();
+                        if($resultado){
+                            header('Location: /');
+                        }
+                    }
 
-                $resultado = $usuario->guardar();
-                if($resultado){
-                    header('Location: /');
-                }
-            }
+                }  
 
             }
   

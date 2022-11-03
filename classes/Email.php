@@ -46,6 +46,7 @@ class Email{
         $contenido.= "<form method='POST' action='https://whispering-temple-36485.herokuapp.com/confirmar-cuenta'>";
         $contenido.= "<input type='hidden' name='token' value=" . $this->token ." >";
         $contenido.="<button type='submit'>Confirmar</button>";
+        $contenido.="</form>";
      //   <!-- <a href='https://whispering-temple-36485.herokuapp.com/confirmar-cuenta?token=  
      //   ". $this->token ."'>Confirmar Cuenta</a> </p>"; -->
 

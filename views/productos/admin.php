@@ -89,8 +89,9 @@
                             <td class="td">
                                 <form method="POST" action="/admin" >
                                     <input type="hidden" name="id" value="<?php echo $producto->id; ?>">
-                                    <!-- <input type="submit" name="accion" value="Eliminar">   -->
-                                    <button type="submit"  name="accion" class="boton-pedido"><i class="fa-solid fa-trash-can"></i>Eliminar</button>                          
+                                    <input type="hidden" name="accion" value="Eliminar">   
+                                    <button type="submit" class="boton-pedido">\
+                                        <i class="fa-solid fa-trash-can"></i>Eliminar</button>                          
                                 </form>
                                  <!-- <form method="GET" action="/uploadProducto?id=<?php //echo $producto->id; ?>">  -->
                                  <form method="POST" action="/uploadProducto"> 

@@ -206,6 +206,7 @@ class LoginController{
                 if(empty($usuario)){
                     //Token no valido
                     Usuario::setAlerta('error', 'Token NO Valido');
+                    header('Location:/');
                     
                 }else{  //token valido
                                 //Modificar usuarios confirmados
@@ -213,6 +214,7 @@ class LoginController{
                     $usuario->token = null;
                     $usuario->guardar();
                     Usuario::setAlerta('exito', 'Cuenta Confirmada');
+                    header("Location:/confirmar-cuenta");
                 }
 
                 $alertas = Usuario::getAlertas(); //Alertas que se guardanen memoria puedan ser leidas antes de mostrar la vista
@@ -220,10 +222,10 @@ class LoginController{
                 //header("Location:/confirmar-cuenta");
 
             }
-            
-            $router->render('auth/confirmar-cuenta', [
-                'alertas' => $alertas
-            ]);
+
+            // $router->render('auth/confirmar-cuenta', [
+            //     'alertas' => $alertas
+            // ]);
 
         }
 

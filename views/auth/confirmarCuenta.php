@@ -2,6 +2,6 @@
 <!-- incluyo las alertas en esta pagina -->
 <?php include_once __DIR__ . '/../templates/alertas.php'; ?>  
 
-<div class="acciones">
-    <a href="/"> <strong>Ya tienes una cuenta? Iniciar Sesion</strong></a>
+<div class="acciones, centrar">
+    <a href="/"> <strong>Ya tienes una cuenta? Iniciar Sesión</strong></a>
 </div>

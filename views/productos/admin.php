@@ -19,7 +19,7 @@
 
         <div class="flex">
             <div>
-                <form method="GET" action="/subirProducto" >
+                <form method="POST" action="/subirProducto" >
                     <input type="hidden" name="accion" value="registrar">
                     <button type="submit" class="boton-login"><i class="fa-solid fa-cash-register"></i>Registrar</button>
                 </form>

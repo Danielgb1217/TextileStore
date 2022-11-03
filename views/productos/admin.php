@@ -92,7 +92,8 @@
                                     <!-- <input type="submit" name="accion" value="Eliminar">   -->
                                     <button type="submit"  name="accion" class="boton-pedido"><i class="fa-solid fa-trash-can"></i>Eliminar</button>                          
                                 </form>
-                                 <form method="GET" action="/uploadProducto?id=<?php echo $producto->id; ?>"> 
+                                 <!-- <form method="GET" action="/uploadProducto?id=<?php //echo $producto->id; ?>">  -->
+                                 <form method="GET" action="/uploadProducto"> 
                                      <input type="hidden" name="id" value="<?php echo $producto->id; ?>"> 
                                     <button type="submit" class="boton-pedido" value="actualizar">
                                     <i class="fa-solid fa-pen-to-square fa-xs"></i>Actualizar</button>

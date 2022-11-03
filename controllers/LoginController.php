@@ -217,6 +217,7 @@ class LoginController{
 
             $alertas = Usuario::getAlertas(); //Alertas que se guardanen memoria puedan ser leidas antes de mostrar la vista
             //Rencerizar la vista
+            header("Location:/confirmar-cuenta");
             $router->render('auth/confirmar-cuenta', [
                 'alertas' => $alertas
             ]);

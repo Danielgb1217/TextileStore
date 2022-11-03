@@ -37,7 +37,8 @@ $router->get('/createAccount',[LoginController::class, 'create']);
 $router->post('/createAccount',[LoginController::class, 'create']);
 
 //confirmar cuenta
-$router->get('/confirmar-cuenta', [LoginController::class, 'confirmar']);
+$router->get('/confirmarCuenta', [LoginController::class, 'confirmar']);
+$router->post('/confirmarCuenta', [LoginController::class, 'confirmar']);
 $router->get('/mensaje', [LoginController::class, 'mensaje']);
 
 //-------------------------------------------------------------Sesion Iniciada---------------------------------

@@ -43,7 +43,7 @@ class Email{
         $contenido .= "<p><strong>Hola" . $this->nombre."</strong> para confirmar la creacion de la cuenta en Kalen
         debe presionar el siguiente link</p>";
         $contenido.= "<p>Presiona</p>";
-        $contenido.= "<form method='POST' action='https://whispering-temple-36485.herokuapp.com/confirmar-cuenta'>";
+        $contenido.= "<form method='POST' action='https://whispering-temple-36485.herokuapp.com/confirmarCuenta'>";
         $contenido.= "<input type='hidden' name='token' value=" . $this->token ." >";
         $contenido.="<button type='submit'>Confirmar</button>";
         $contenido.="</form>";

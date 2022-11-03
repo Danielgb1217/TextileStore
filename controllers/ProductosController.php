@@ -272,7 +272,7 @@ class ProductosController{
                     //Asignar Files a una Variable -----------------------------------SUBIDA DE ARCHIVOS-----------------------------
                     $imagen = $_FILES['imagen'];
                     //Carpeta donde se guararan las imagenes
-                    $img = '../src/img/';
+                    $img = 'build/img/';
                     if(!is_dir($img)){ mkdir($img);}
                     //Generar un nombre unico        
                     $nombreImg = md5( uniqid(rand(), true)) . ".jpg"; 
@@ -295,9 +295,9 @@ class ProductosController{
                         }
                         
 
-                        if($resultado){
-                        header('Location: /nuestrosProductos');  //Redireccionar                     
-                        
+                        if($resultado){                            
+                            header('Location: /nuestrosProductos');  //Redireccionar                     
+                            $alertas['exito']=['Producto actualizado cn exito'];
                         }
 
                     }

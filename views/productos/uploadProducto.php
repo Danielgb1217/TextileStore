@@ -10,7 +10,7 @@
         <form method="POST" class="formulario"
             method="POST" 
             enctype="multipart/form-data" 
-            action="/uploadProducto?id=<?php echo $producto->id; ?>">
+            action="/uploadProducto">
 
             
             <div class="actualizar-productos">

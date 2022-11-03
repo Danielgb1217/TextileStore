@@ -67,8 +67,8 @@ class ProductosController{
                     $image->save($img . $nombreImg);
 
                     if($resultado){
-                    header('Location: /');  //Redireccionar                     
-                    
+                    header('Location: /admin');  //Redireccionar                     
+                    $alertas['exito'] = ['Producto Creado con exito'];
                     }
 
                 }

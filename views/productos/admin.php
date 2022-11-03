@@ -48,7 +48,7 @@
                         placeholder="Nombre del Producto"/>
                     </div>
                     <input type="hidden" name="opcion" value="buscar">
-                    <input type="submit" class="boton-login" value="reg">
+                    <input type="submit" class="boton-login" value="Buscar">
                 
             </form>
 

@@ -7,7 +7,7 @@
 <h1>Actualizar un Producto</h1>
 <center><p>Modifica tu Producto</p></center>
 <div>  
-        <form class="formulario"
+        <form method="POST" class="formulario"
             method="POST" 
             enctype="multipart/form-data" 
             action="/uploadProducto?id=<?php echo $producto->id; ?>">

@@ -40,18 +40,17 @@ class Email{
 
         // envio el token por peticion get a la pagina confirmar cuenta
         $contenido = "<html>";
-        $contenido .= "<p><strong>Hola" . $this->nombre."</strong> para confirmar la creacion de la cuenta en Kalen
-        debe presionar el siguiente link</p>";
-        $contenido.= "<p>Presiona</p>";
+        $contenido .= "<p><strong>Hola " . $this->nombre."</strong> para confirmar la creacion de la cuenta en TextileStore
+        debe Confirmar --></p>";
         $contenido.= "<form method='POST' action='https://whispering-temple-36485.herokuapp.com/confirmarCuenta'>";
         $contenido.= "<input type='hidden' name='token' value=" . $this->token ." >";
-        $contenido.="<button type='submit'>Confirmar</button>";
+        $contenido.="<button type='submit'><strong>Confirmar</strong></button>";
         $contenido.="</form>";
      //   <!-- <a href='https://whispering-temple-36485.herokuapp.com/confirmar-cuenta?token=  
      //   ". $this->token ."'>Confirmar Cuenta</a> </p>"; -->
 
 
-        $contenido.= "<p>SI no has solicitado la cuenta, ignora el mensaje</p>";
+        $contenido.= "<p><strong>Si no has solicitado la cuenta, ignora el mensaje</strong></p>";
         $contenido.= "</html>";
 
         //Agrego el contenido construido al cuerpo 
@@ -78,7 +77,7 @@ class Email{
 
         $email->setFrom('textilesotore@gmail.com', 'Gestion de Cuentas Textile Store'); //direccion proporcionada en mailtrap para practicas de desarrollo
         $email->addAddress($this->email, 'TextileStore.com');      
-        $email->Subject = 'Restablecer Contrasena';
+        $email->Subject = 'Restablecer Contraseña';
 
         //Se utilizara ktml
         $email->isHTML(TRUE);
@@ -86,11 +85,13 @@ class Email{
 
         // envio el token por peticion get a la pagina confirmar cuenta
         $contenido = "<html>";
-        $contenido .= "<p><strong>Hola" . $this->nombre."</strong> para restablecer la contrasenia de la cuenta en Kalen
-        debe presionar el siguiente link</p>";
-        $contenido.= "<p>Presiona aqui <a href='https://whispering-temple-36485.herokuapp.com/missAcount?token=  
-        ". $this->token ."'>Restablecer Password</a> </p>";
-        $contenido.= "<p>SI no has solicitado la recuperacion de el password, ignora el mensaje</p>";
+        $contenido .= "<p><strong>Hola " . $this->nombre."</strong> para restablecer la contraseña de la cuenta en TextileStore
+        debe confirmar</p>";
+        $contenido.= "<form method='POST' action='https://whispering-temple-36485.herokuapp.com/missAcount'>";
+        $contenido.= "<input type='hidden' name='token' value=" . $this->token ." >";
+        $contenido.="<button type='submit'><strong>Restablecer</strong></button>";
+        $contenido.="</form>";
+        $contenido.= "<p>Si no has solicitado la recuperación de el password, ignora el mensaje</p>";
         $contenido.= "</html>";
 
         //Agrego el contenido construido al cuerpo 

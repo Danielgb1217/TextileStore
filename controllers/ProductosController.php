@@ -261,9 +261,10 @@ class ProductosController{
 
 
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
-                   
-            $producto = $producto->find($_POST['id']); //tomo el producto encontrado con el id enviado por ger desde la pagina admin
-            
+             
+            if($_POST['accion'] === 'uploadProducto'){
+                $producto = $producto->find($_POST['id']); //tomo el producto encontrado con el id enviado por ger desde la pagina admin
+            }else{
                     //Aqui puedo pasar las validaciones necesarias
                     $producto->sincronizar($_POST);  
                     //debuguear($producto)        ;
@@ -301,7 +302,7 @@ class ProductosController{
 
                     }
 
-               
+                }
 
         }
 

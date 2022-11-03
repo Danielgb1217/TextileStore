@@ -42,7 +42,7 @@ class Email{
         $contenido = "<html>";
         $contenido .= "<p><strong>Hola" . $this->nombre."</strong> para confirmar la creacion de la cuenta en Kalen
         debe presionar el siguiente link</p>";
-        $contenido.= "<p>Presiona aqui <a href='http://localhost:3000/confirmar-cuenta?token=  
+        $contenido.= "<p>Presiona aqui <a href='https://whispering-temple-36485.herokuapp.com/confirmar-cuenta?token=  
         ". $this->token ."'>Confirmar Cuenta</a> </p>";
         $contenido.= "<p>SI no has solicitado la cuenta, ignora el mensaje</p>";
         $contenido.= "</html>";
@@ -81,7 +81,7 @@ class Email{
         $contenido = "<html>";
         $contenido .= "<p><strong>Hola" . $this->nombre."</strong> para restablecer la contrasenia de la cuenta en Kalen
         debe presionar el siguiente link</p>";
-        $contenido.= "<p>Presiona aqui <a href='http://localhost:3000/missAcount?token=  
+        $contenido.= "<p>Presiona aqui <a href='https://whispering-temple-36485.herokuapp.com/missAcount?token=  
         ". $this->token ."'>Restablecer Password</a> </p>";
         $contenido.= "<p>SI no has solicitado la recuperacion de el password, ignora el mensaje</p>";
         $contenido.= "</html>";

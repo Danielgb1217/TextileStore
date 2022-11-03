@@ -40,7 +40,7 @@ class ProductosController{
 
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
                 //Aqui puedo pasar las validaciones necesarias
-                $producto->sincronizar($_POST??"");          
+                $producto->sincronizar($_POST);          
 
                 //Asignar Files a una Variable -----------------------------------SUBIDA DE ARCHIVOS-----------------------------
                 $imagen = $_FILES['imagen'];

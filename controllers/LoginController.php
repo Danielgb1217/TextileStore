@@ -101,24 +101,21 @@ class LoginController{
         public static function missAcount(Router $router){
             $alertas = [];
             $error = false;
-            $usuario = new Usuario();
+
+            $token = s($_POST['token']); //limpia los espacios en blanco por porblemas del %20 en la url get    
+          
+            //Buscar usuario por su token
+            $usuario = Usuario::where('token',$token);
+
+            if(empty($usuario)){
+                Usuario::setAlerta('error', 'Token no valido');
+                $error = true;
+            }
 
 
             if($_SERVER['REQUEST_METHOD'] === 'POST'){ //leer el nuevo password y guradarlo
                 
-                if($_POST['accion'] === 'miss'){
-
-                    $token = s(trim(($_POST['token']))); //limpia los espacios en blanco por porblemas del %20 en la url get      
-          
-                    //Buscar usuario por su token
-                    $usuario = Usuario::where('token',$token);
-        
-                    if(empty($usuario)){
-                        Usuario::setAlerta('error', 'Token no valido');
-                        $error = true;
-                    }
-
-                }else{
+                if($_POST['accion'] === 'miss'){                
 
                     $password = new Usuario($_POST);
                     $alertas =  $password->validarPassword();

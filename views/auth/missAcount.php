@@ -19,7 +19,8 @@
         placeholder="Nuevo Password"/> <!--con esto mantengo los datos en la vista a pesar de tener objeto en memoria y actualizar -->
     </div>
 
-    <input type="submit" value="Restablecer" class="boton" />
+    <input type="hidden" name="accion" value="miss" />
+    <input type="submit" value="Restablecer" class="boton'login" />
 
 </form>
 

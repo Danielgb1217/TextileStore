@@ -1,5 +1,5 @@
 <h1 class="nombre-pagina">Olvide Mi Password</h1>
-<p class="descripcion-pagina"> Escribe tu email registrado para recuperar el password </p>
+<p class="descripcion-pagina"> Escribe el email registrado para recuperar el password </p>
 
 <?php 
         include_once __DIR__.'/../templates/alertas.php';
@@ -23,6 +23,6 @@
 </form>
 
 <div class="acciones">
-    <a href="/"> Ya tienes una cuenta? Iniciar Sesion</a>
+    <a href="/"> Ya tienes una cuenta? Iniciar Sesión</a>
     <a href="/createAccount"> Aun no tienes una cuenta ? Crear una</a>
 </div>

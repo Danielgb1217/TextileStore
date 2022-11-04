@@ -196,15 +196,16 @@ class ProductosController{
         
 
         if($_SERVER['REQUEST_METHOD'] === 'POST'){           
-             
+             debuguear($_POST);
 
              if(($_POST['opcion'])?? "" === 'buscar'){ 
 
                 $productos =Productos::whereNombre('nombre', $_POST['buscar']??"");  //lleno el arreglo declarado
                 //no puedo poner esto--->$productos[] <---- Seria anidar el arreglo 
                 if(!$productos){
-                    header('Location:/admin');
                     $alertas['error'] = ['NO hay existencia del producto'];
+                    header('Location:/admin');
+                   
                 }else{
                     $display = 'mostrar';
                     $modoDisplay = 'block';

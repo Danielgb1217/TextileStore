@@ -195,20 +195,22 @@ class ProductosController{
         $modoDisplay = 'grid-dos';
         
 
-        if($_SERVER['REQUEST_METHOD'] === 'POST'){
-
-             $productos =Productos::whereNombre('nombre', $_POST['buscar']??"");  //lleno el arreglo declarado
-             //no puedo poner esto--->$productos[] <---- Seria anidar el arreglo 
+        if($_SERVER['REQUEST_METHOD'] === 'POST'){           
              
-            if(!$productos){
-                header('Location:/admin');
-                $alertas['error'] = ['NO hay existencia del producto'];
-            }
 
              if(($_POST['opcion'])?? "" === 'buscar'){ 
-                $display = 'mostrar';
-                $modoDisplay = 'block';
-                $displayImagen = 'ocultar';
+
+                $productos =Productos::whereNombre('nombre', $_POST['buscar']??"");  //lleno el arreglo declarado
+                //no puedo poner esto--->$productos[] <---- Seria anidar el arreglo 
+                if(!$productos){
+                    header('Location:/admin');
+                    $alertas['error'] = ['NO hay existencia del producto'];
+                }else{
+                    $display = 'mostrar';
+                    $modoDisplay = 'block';
+                    $displayImagen = 'ocultar';
+                }
+
              }
 
              if(($_POST['accion'])?? "" === 'eliminar'){        //Elimino los pedidos

@@ -126,8 +126,7 @@ class ActiveRecord {
     //Buscar un token---sirve para buscar en la BD con un where especifico diferente al id
         // Busca un registro por su id
     public static function where($columna, $valor) {
-        $query = "SELECT * FROM " . static::$tabla  ." WHERE ${columna} = '${valor}'";  
-        debuguear($query);        
+        $query = "SELECT * FROM " . static::$tabla  ." WHERE ${columna} = '${valor}'";                
         $resultado = self::consultarSQL($query);        
         return array_shift( $resultado ) ;      //array_shift solo muestra el primer valor del arreglo, por eso no me sirve si
                                                  //necesito el arreglo completo

@@ -115,10 +115,10 @@ class LoginController{
                     //UNA COSA ES MI USUARIO ESPEJ DE LA BASE DE DATOS-->$usuario<-- Y OTRA ES EL USUARIO CREADO DEL FORMULARIO POST -->$password<--
                     if(empty($alertas)){    //Si pasamos la validadcion el arreglo de alertas estara vacio y podemos hashear el password
                         $usuario->password = ' ';  //borro el password viejo
-                        
+                        debuguear($usuario);
                         $usuario->password = $password->password;     //sobreescribo el passwor que e traigo por el metodo post del frm
                        
-                        //$usuario->hashPassword();
+                        $usuario->hashPassword();
                         $usuario->token = null;
     
 
@@ -142,7 +142,7 @@ class LoginController{
                 Usuario::setAlerta('error', 'Token no valido');
                 $error = true;
             }  
-debuguear($usuario->id);
+
             $alertas = Usuario::getAlertas();
             $router->render('auth/missAcount', 
             ['alertas' => $alertas, 

@@ -103,7 +103,7 @@ class LoginController{
             $error = false;
 
             if($_SERVER['REQUEST_METHOD'] === 'POST'){ //leer el nuevo password y guradarlo
-                debuguear($_POST['id']);
+                //debuguear($_POST['id']);
                 if($_POST['accion'] === 'miss'){  
                    
                     $usuario = Usuario::find($_POST['id']);
@@ -135,6 +135,7 @@ class LoginController{
 
             $token = s($_POST['token']); //limpia los espacios en blanco por porblemas del %20 en la url get  
             //Buscar usuario por su token
+            debuguear($token);
             $usuario = Usuario::where('token',$token);           
             //debuguear($usuario);
             if(empty($usuario)){

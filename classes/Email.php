@@ -89,7 +89,6 @@ class Email{
         debe confirmar</p>";
         $contenido.= "<form method='POST' action='https://whispering-temple-36485.herokuapp.com/missAcount'>";
         $contenido.= "<input type='hidden' name='token' value=" . $this->token ." >";
-        debuguear($this->token);
         $contenido.="<button type='submit'><strong>Restablecer</strong></button>";
         $contenido.="</form>";
         $contenido.= "<p>Si no has solicitado la recuperación de el password, ignora el mensaje</p>";

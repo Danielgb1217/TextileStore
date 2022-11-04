@@ -115,9 +115,9 @@ class LoginController{
 
 
             if($_SERVER['REQUEST_METHOD'] === 'POST'){ //leer el nuevo password y guradarlo
-                
+                debuguear($_POST['id']);
                 if($_POST['accion'] === 'miss'){  
-                    debuguear($_POST['id']);
+                   
                     $usuario = Usuario::find($_POST['id']);
                     
                     $password = new Usuario($_POST);

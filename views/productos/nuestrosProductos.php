@@ -94,7 +94,7 @@
                     <div class="centrar">
                         <div>
                             <div>
-                            <label for="nombre">Producto:</label>
+                            <label for="nombre"><strong>Nombre del Producto:</strong></label>
                             </div>
                             <div>
                             <input class="campo-detalle_producto"
@@ -126,7 +126,7 @@
 
                         <div>
                             <div>
-                            <label for="cantidad" >Cantidad:</label>
+                            <label for="cantidad"><center><strong>Cantidad:</strong></center></label>
                             </div>
                             <input id="cantidad-producto" 
                             class="campo-selector_producto" 
@@ -164,7 +164,7 @@
 
 
             <div>
-                <label  for="costo_unidad">Precio:</label>
+                <label  for="costo_unidad"><center><strong>Precio:</strong></center></label>
                 <input id="costo-unidad"
                 class="campo-detalle_producto" 
                 type="number" 

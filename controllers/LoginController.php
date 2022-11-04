@@ -142,12 +142,12 @@ class LoginController{
                 Usuario::setAlerta('error', 'Token no valido');
                 $error = true;
             }  
-
+debuguear($usuario->id);
             $alertas = Usuario::getAlertas();
             $router->render('auth/missAcount', 
             ['alertas' => $alertas, 
             'error' => $error,
-            '$usuario' => $usuario
+            '$usuarioId' => $usuario->id
         
         ]);
         }

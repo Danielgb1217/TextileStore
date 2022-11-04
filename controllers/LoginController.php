@@ -117,8 +117,9 @@ class LoginController{
             if($_SERVER['REQUEST_METHOD'] === 'POST'){ //leer el nuevo password y guradarlo
                 
                 if($_POST['accion'] === 'miss'){                
-//debuguear($_POST);
+
                     $password = $_POST['password'];
+                    debuguear($password);
                     $alertas =  $password->validarPassword();
     
                     //UNA COSA ES MI USUARIO ESPEJ DE LA BASE DE DATOS-->$usuario<-- Y OTRA ES EL USUARIO CREADO DEL FORMULARIO POST -->$password<--

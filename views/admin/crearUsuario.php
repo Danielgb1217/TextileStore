@@ -4,6 +4,7 @@
 include_once __DIR__.'/../templates/alertas.php';
 include_once __DIR__.'/../templates/cabecera.php';
 ?>
+   <a class="icono-compras" href="/configurarUsuarios"><i class="fa-solid fa-circle-left fa-2xl"></i></a>
    <h1 class="nombre-pagina">Crear Usuario</h1>    
 
 <div class="contenedor-crear_cuenta, centrar">

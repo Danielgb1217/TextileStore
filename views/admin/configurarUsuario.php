@@ -6,7 +6,7 @@
 <div >
     <main>
         <div>            
-            <form class="formulario" method="POST" action="/configurarUsuarios">
+            <form class="formulario, centrar" method="POST" action="/configurarUsuarios">
                 <div class="cabecero-usuarios">
                     <div>
                         <label><strong>Buscar por Correo:</strong></label>
@@ -46,17 +46,18 @@
                 <h3>Productos</h3>             
             </div> -->
         
+            <!-- <table class="tabla-usuarios"> -->
             <table class="tabla-usuarios">
                 <thead>
                     <tr>                                        
-                        <th>Nombre</th>    
-                        <th>Apellido</th>              
-                        <th>Cedula</th>                
-                        <th>Email</th>
-                        <th>Telefono</th>
-                        <th>Tipo Usuario</th>
-                        <th>Estado</th>
-                        <th>Acciones</th>
+                        <th><strong>Nombre</strong></th>    
+                        <th><strong>Apellido</strong></th>    
+                        <th><strong>Email</strong></th>    
+                        <th><strong>Cedula</strong></th>    
+                        <th><strong>Telefono</strong></th>    
+                        <th><strong>Tipo Usuario</strong></th>    
+                        <th><strong>Estado</strong></th>    
+                        <th><strong>Acciones</strong></th>       
                     </tr>
                 </thead>
 

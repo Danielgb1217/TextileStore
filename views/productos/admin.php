@@ -6,7 +6,7 @@
 ?>
 
 <a class="icono-compras" href="/nuestrosProductos"><i class="fa-solid fa-circle-left fa-2xl"></i></a>
-<h1> Administracion de Productos</h1>
+<h1> Administración de Productos</h1>
 
 <div class=<?php echo($modoDisplay); ?>>
 
@@ -19,9 +19,10 @@
 
         <div class="flex">
             <div>
-                <form method="GET" action="/subirProducto" >
-                    <!-- <input type="hidden" name="accion" value="registrar"> -->
-                    <button type="submit" class="boton-login"><i class="fa-solid fa-cash-register"></i>Registrar</button>
+                <form action="/subirProducto" >
+                    <input type="hidden" name="accion" value="registrar">
+                    <button type="submit" class="boton-logout"><i class="fa-solid fa-cash-register"></i>Registrar</button>
+                    <!-- <input type="submit" class="boton-login" value="Reg"></input> -->
                 </form>
             </div>
             <!-- <div>
@@ -40,15 +41,16 @@
                                  
 
                     <div class="input-buscar">
-                        <label for="buscar"><strong>Buscar:</strong></label>
+                        <!-- <label for="buscar"><strong>Buscar:</strong></label> -->
                         <input 
+                        class="centrar"
                         type="text" 
                         id="buscar" 
                         name="buscar" 
-                        placeholder="Nombre del Producto"/>
+                        placeholder="Buscar por Nombre del Producto"/>
                     </div>
                     <input type="hidden" name="opcion" value="buscar">
-                    <input type="submit" class="boton-login" value="Buscar">
+                    <button type="submit" class="boton-login"><i class="fa-solid fa-magnifying-glass-arrow-right"></i>Buscar</button>
                 
             </form>
 
@@ -89,14 +91,11 @@
                             <td class="td">
                                 <form method="POST" action="/admin" >
                                     <input type="hidden" name="id" value="<?php echo $producto->id; ?>">
-                                    <input type="hidden" name="accion" value="Eliminar">   
-                                    <button type="submit" class="boton-pedido">
-                                        <i class="fa-solid fa-trash-can"></i>Eliminar</button>                          
+                                    <!-- <input type="submit" name="accion" value="Eliminar">   -->
+                                    <button type="submit"  name="accion" class="boton-pedido"><i class="fa-solid fa-trash-can"></i>Eliminar</button>                          
                                 </form>
-                                 <!-- <form method="GET" action="/uploadProducto?id=<?php //echo $producto->id; ?>">  -->
-                                 <form method="POST" action="/uploadProducto"> 
+                                 <form method="GET" action="/uploadProducto?id=<?php echo $producto->id; ?>"> 
                                      <input type="hidden" name="id" value="<?php echo $producto->id; ?>"> 
-                                     <input type="hidden" name="accion" value="uploadProducto"> 
                                     <button type="submit" class="boton-pedido" value="actualizar">
                                     <i class="fa-solid fa-pen-to-square fa-xs"></i>Actualizar</button>
                                 </form> 

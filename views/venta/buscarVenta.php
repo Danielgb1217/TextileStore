@@ -93,7 +93,7 @@
                         <input type="hidden" name="accion" value="reporte">
                         <input type="hidden" name="variable" id="variable"> 
                           <div class="flex">
-                                <label><strong>Seleccione el Mes</label></strong>                  
+                                <label><center><strong>Seleccione el Mes</strong></center></label>                  
                                 <select name="mes" id="mes" class="campo-selector">   
                                     <option selected>Mes</option>                     
                                     <option value="1">Enero</option>
@@ -110,24 +110,14 @@
                                     <option value="12">Diciembre</option>
                                 </select>                   
                             <button class="boton-reporte" type="submit"><i class="fa-solid fa-file-pdf"></i>Reporte</button>
-                        </div>  
+                            </div>  
                     </form>  
-                    <h3>Productos</h3>             
+                                 
                 </div>
             
-                <table class="tabla-factura">
-                    <thead>
-                        <tr>                                        
-                            <th>Cedula</th>    
-                            <th>Email</th>              
-                            <th>Producto</th>                
-                            <th>costo</th>
-                            <th>Cantidad</th>
-                            <th>Fecha de Venta</th>
-                        </tr>
-                    </thead>
-
-                    <tbody> <!-- Mostrar los Resultados -->
+     
+                <h3>Productos</h3>
+                    <div class="grid-dos">                 
 
                         <?php 
                         $count = 0; 
@@ -135,24 +125,40 @@
                         $total = 0;                    
                         ?>
                         <?php foreach( $producto as $producto ): ?>                       
-                            
-                        <tr>                       
-                            <td ><?php echo $usuario[$count]->cedula??" "; ?></td>
-                            <td ><?php echo $usuario[$count]->email; ?></td>  
-                            <td ><?php echo $producto->nombre; ?></td> 
-                            <td ><?php echo number_format( $producto->costo_unidad);?> </td> 
-                            <td ><?php echo $pedido[$count]->cantidad;?> </td> 
-                            <td ><?php echo $pedido[$count]->fecha_pedido;?> </td>                         
-                        </tr>
+                            <div class="buscar-ventas">
+                                <div >
+                                    <p><strong>Cedula:</strong><?php echo " ".$usuario[$count]->cedula??" "; ?></p>
+                                </div>
+                                <div>
+                                    <p><strong>Email:</strong><?php echo " ".$usuario[$count]->email; ?></p>
+                                </div>
+                                <div>
+                                    <p><strong>Producto:</strong><?php echo" ". $producto->nombre; ?></p>
+                                </div>
+                            </div>
+                            <div class="buscar-ventas">
+                                <div>
+                                    <p><strong>Precio:</strong><?php echo '$ '. (number_format( $producto->costo_unidad));?></p>
+                                </div>
+                                <div>
+                                    <p><strong>Cantidad:</strong><?php echo " ".$pedido[$count]->cantidad;?></p>
+                                </div>
+                                <div>
+                                    <p><strong>Fecha de Venta:</strong><?php echo" ". $pedido[$count]->fecha_pedido;?></p>
+                                </div>                            
+                                <br/>
+                            </div>            
+                        
                         <?php $count++;
                             $subtotal = $producto->costo_unidad + $subtotal;                                 
                         ?>
                         <?php endforeach; ?>
-                        </tbody>  
-                </table> 
+            
+                    </div>  
+
                 <!-- Div para mostrar el grafico de google -->
-                <div class="img-estadistica">
-                    <div id="piechart" style="width: 100%; height: 100%;"></div>
+                <div class="estadistica">
+                    <div class="img-estadistica" id="piechart"></div>
                 </div>
             </div> 
             

@@ -86,7 +86,8 @@
                     <div> 
                         <label for="imagen"><strong>Imagen:</strong></label>
                         <br/>
-                            <input class="selector-ancho_upload" type="file" id="imagen" accept="image/jpeg, image/png" name="imagen">
+                            <input class="selector-ancho_upload" 
+                            type="file" id="imagen" accept="image/jpeg, image/png" name="imagen">
                         </div>
 
                     <div> 

@@ -121,13 +121,13 @@ class LoginController{
                     $password = new Usuario($_POST);
                     
                     $alertas =  $password->validarPassword();
-                    debuguear($alertas);
+                   
                     //UNA COSA ES MI USUARIO ESPEJ DE LA BASE DE DATOS-->$usuario<-- Y OTRA ES EL USUARIO CREADO DEL FORMULARIO POST -->$password<--
                     if(empty($alertas)){    //Si pasamos la validadcion el arreglo de alertas estara vacio y podemos hashear el password
                         $usuario->password = ' ';  //borro el password viejo
                         
                         $usuario->password = $password->password;     //sobreescribo el passwor que e traigo por el metodo post del frm
-                        
+                        debuguear($usuario);
                         //$usuario->hashPassword();
                         $usuario->token = null;
     

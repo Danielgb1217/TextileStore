@@ -118,7 +118,7 @@ class LoginController{
                 
                 if($_POST['accion'] === 'miss'){                
 
-                    $password = $_POST['password'];
+                    $password = new Usuario($_POST);
                     
                     $alertas =  $password->validarPassword();
                     debuguear($alertas);
@@ -126,7 +126,7 @@ class LoginController{
                     if(empty($alertas)){    //Si pasamos la validadcion el arreglo de alertas estara vacio y podemos hashear el password
                         $usuario->password = ' ';  //borro el password viejo
                         
-                        $usuario->password = $password;     //sobreescribo el passwor que e traigo por el metodo post del frm
+                        $usuario->password = $password->password;     //sobreescribo el passwor que e traigo por el metodo post del frm
                         
                         //$usuario->hashPassword();
                         $usuario->token = null;

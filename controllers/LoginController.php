@@ -103,7 +103,7 @@ class LoginController{
             $error = false;
 
             $token = s($_POST['token']); //limpia los espacios en blanco por porblemas del %20 en la url get    
-          
+            debuguear($token);
             //Buscar usuario por su token
             $usuario = Usuario::where('token',$token);
 
@@ -119,7 +119,7 @@ class LoginController{
                 if($_POST['accion'] === 'miss'){                
 
                     $password = new Usuario($_POST);
-                    debuguear($usuario);
+                    
                     $alertas =  $password->validarPassword();
                    
                     //UNA COSA ES MI USUARIO ESPEJ DE LA BASE DE DATOS-->$usuario<-- Y OTRA ES EL USUARIO CREADO DEL FORMULARIO POST -->$password<--

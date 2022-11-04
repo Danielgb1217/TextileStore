@@ -119,7 +119,7 @@ class LoginController{
                 if($_POST['accion'] === 'miss'){                
 
                     $password = new Usuario($_POST);
-                    debuguear($password);
+                    debuguear($usuario);
                     $alertas =  $password->validarPassword();
                    
                     //UNA COSA ES MI USUARIO ESPEJ DE LA BASE DE DATOS-->$usuario<-- Y OTRA ES EL USUARIO CREADO DEL FORMULARIO POST -->$password<--

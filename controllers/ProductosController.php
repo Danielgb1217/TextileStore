@@ -40,7 +40,7 @@ class ProductosController{
 
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
                 
-            if ($_POST['accion'] === 'registrar'){         
+          //  if ($_POST['accion'] === 'registrar'){         
             
                  //Aqui puedo pasar las validaciones necesarias
                 $producto->sincronizar($_POST);          
@@ -74,7 +74,7 @@ class ProductosController{
                     $alertas['exito'] = ['Producto Creado con exito'];
                     }
 
-                }
+             //   }
 
             }
 

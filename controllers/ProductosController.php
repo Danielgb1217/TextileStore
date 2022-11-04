@@ -211,7 +211,7 @@ class ProductosController{
                 $displayImagen = 'ocultar';
              }
 
-             if(($_POST['accion'])?? "" === 'eliminar'){        //Elimino los pedidos
+             if(($_POST['accion'])?? "" === 'Eliminar'){        //Elimino los pedidos
 
                     $producto->id =$_POST['id'];                
                     $resultado = $producto->eliminar();                

@@ -137,7 +137,7 @@ class LoginController{
             //Buscar usuario por su token
            
             $usuario = Usuario::where('token',$token);           
-            debuguear($usuario);
+            
             if(empty($usuario)){
                 Usuario::setAlerta('error', 'Token no valido');
                 $error = true;

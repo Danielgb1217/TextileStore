@@ -9,7 +9,7 @@
 
 <?php 
 
-//debuguear($usuario);
+debuguear($usuario);
 ?>
 
 <form class="formulario, centrar" method="POST" action="/missAcount">

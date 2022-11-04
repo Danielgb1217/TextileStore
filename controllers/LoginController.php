@@ -147,7 +147,7 @@ class LoginController{
             $router->render('auth/missAcount', 
             ['alertas' => $alertas, 
             'error' => $error,
-            '$usuarioId' => $usuario->id
+            'usuarioId' => $usuario->id
         
         ]);
         }

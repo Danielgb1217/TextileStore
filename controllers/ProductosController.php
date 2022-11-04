@@ -196,7 +196,7 @@ class ProductosController{
         
 
         if($_SERVER['REQUEST_METHOD'] === 'POST'){           
-             debuguear($_POST);
+             echo($_POST);
 
              if(($_POST['opcion'])?? "" === 'buscar'){ 
 

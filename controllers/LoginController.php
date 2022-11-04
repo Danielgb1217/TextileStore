@@ -102,18 +102,6 @@ class LoginController{
             $alertas = [];
             $error = false;
 
-            $token = s($_POST['token']); //limpia los espacios en blanco por porblemas del %20 en la url get    
-            
-            //Buscar usuario por su token
-            $usuario = Usuario::where('token',$token);
-            
-
-            if(empty($usuario)){
-                Usuario::setAlerta('error', 'Token no valido');
-                $error = true;
-            }
-
-
             if($_SERVER['REQUEST_METHOD'] === 'POST'){ //leer el nuevo password y guradarlo
                 debuguear($_POST['id']);
                 if($_POST['accion'] === 'miss'){  
@@ -143,7 +131,16 @@ class LoginController{
                 }  
 
             }
-  
+
+
+            $token = s($_POST['token']); //limpia los espacios en blanco por porblemas del %20 en la url get  
+            //Buscar usuario por su token
+            $usuario = Usuario::where('token',$token);           
+
+            if(empty($usuario)){
+                Usuario::setAlerta('error', 'Token no valido');
+                $error = true;
+            }  
 
             $alertas = Usuario::getAlertas();
             $router->render('auth/missAcount', 

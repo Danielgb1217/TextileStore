@@ -107,6 +107,8 @@ class LoginController{
             //Buscar usuario por su token
             $usuario = Usuario::where('token',$token);
 
+    debuguear($usuario);
+
             if(empty($usuario)){
                 Usuario::setAlerta('error', 'Token no valido');
                 $error = true;
@@ -127,7 +129,6 @@ class LoginController{
                         $usuario->password = $password->password;     //sobreescribo el passwor que e traigo por el metodo post del frm
                         //$usuario->hashPassword();
                         $usuario->token = null;
-    debuguear($usuario);
                         $resultado = $usuario->guardar();
                         if($resultado){
                             header('Location: /');

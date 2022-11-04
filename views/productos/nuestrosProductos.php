@@ -92,7 +92,7 @@
                     <legend><strong><p>Selecciona tu Producto</p></strong></legend>
                     <!--  -->
                     <div class="centrar">
-                        <div class="campo, block, ancho-producto">
+                        <div>
                             <div>
                             <label for="nombre">Producto:</label>
                             </div>

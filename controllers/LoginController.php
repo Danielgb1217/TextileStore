@@ -125,9 +125,9 @@ class LoginController{
                         $usuario->password = ' ';  //borro el password viejo
             
                         $usuario->password = $password->password;     //sobreescribo el passwor que e traigo por el metodo post del frm
-                        $usuario->hashPassword();
+                        //$usuario->hashPassword();
                         $usuario->token = null;
-    
+    debuguear($usuario);
                         $resultado = $usuario->guardar();
                         if($resultado){
                             header('Location: /');

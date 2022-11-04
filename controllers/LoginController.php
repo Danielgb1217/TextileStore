@@ -103,10 +103,10 @@ class LoginController{
             $error = false;
 
             $token = s($_POST['token']); //limpia los espacios en blanco por porblemas del %20 en la url get    
-            debuguear($token);
+            
             //Buscar usuario por su token
             $usuario = Usuario::where('token',$token);
-
+            debuguear($usuario);
 
             if(empty($usuario)){
                 Usuario::setAlerta('error', 'Token no valido');

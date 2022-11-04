@@ -20,7 +20,7 @@
     </div>
 
     <input type="hidden" name="accion" value="miss" />
-    <!-- //<input type="hidden" name="id" value="miss" /> -->
+    <input type="hidden" name="id" value="<?php echo($usuario->id); ?>" />
     <input type="submit" value="Restablecer" class="boton-login" />
 
 </form>

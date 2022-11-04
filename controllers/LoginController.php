@@ -144,7 +144,12 @@ class LoginController{
   
 
             $alertas = Usuario::getAlertas();
-            $router->render('auth/missAcount', ['alertas' => $alertas, 'error' => $error]);
+            $router->render('auth/missAcount', 
+            ['alertas' => $alertas, 
+            'error' => $error,
+            '$usuario' => $usuario
+        
+        ]);
         }
 
 

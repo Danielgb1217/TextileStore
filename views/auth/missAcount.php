@@ -7,10 +7,7 @@
 
 <?php if($error) return null; ?>
 
-<?php 
 
-debuguear($usuario);
-?>
 
 <form class="formulario, centrar" method="POST" action="/missAcount">
 
@@ -25,7 +22,7 @@ debuguear($usuario);
     </div>
 
     <input type="hidden" name="accion" value="miss" />
-    <input type="hidden" name="id" value="<?php echo($usuario->id); ?>" />
+    <input type="text" name="id" value="<?php echo($usuario->id); ?>" />
     <input type="submit" value="Restablecer" class="boton-login" />
 
 </form>

@@ -10,6 +10,7 @@
     <div class="campo">      
         
         <label for="nombre">Email</label>  <!--El name es lo que vamos a enviar al metodo post -->
+        <br/>
         <input type="text" 
         id="email" 
         name="email" 

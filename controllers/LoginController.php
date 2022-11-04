@@ -116,7 +116,7 @@ class LoginController{
             if($_SERVER['REQUEST_METHOD'] === 'POST'){ //leer el nuevo password y guradarlo
                 
                 if($_POST['accion'] === 'miss'){                
-debuguear($_POST);
+//debuguear($_POST);
                     $password = new Usuario($_POST);
                     $alertas =  $password->validarPassword();
     

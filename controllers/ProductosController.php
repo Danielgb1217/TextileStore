@@ -217,7 +217,7 @@ class ProductosController{
              if(($_POST['accion'])?? "" === 'eliminar'){        //Elimino los pedidos
 
                     $producto->id =$_POST['id']; 
-                    debuguear($producto)               ;
+                                  
                     $resultado = $producto->eliminar();                
                 
                     if($resultado){

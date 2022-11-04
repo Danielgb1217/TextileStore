@@ -151,7 +151,7 @@
                 </div>
 
                 <div class="frm-submit">
-                    <input id="agregar-carrito" class="boton-login" type="text" value="Agregar al carrito">
+                    <input id="agregar-carrito" class="boton-add_carrito" type="text" value="Agregar al carrito">
                 </div>
             </form>
        

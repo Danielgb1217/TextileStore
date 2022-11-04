@@ -306,7 +306,7 @@ class ProductosController{
 
                         if($resultado){                            
                             header('Location: /nuestrosProductos');  //Redireccionar                     
-                            $alertas['exito']=['Producto actualizado cn exito'];
+                            $alertas['exito']=['Producto actualizado con exito'];
                         }
 
                     }

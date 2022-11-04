@@ -106,7 +106,7 @@ class LoginController{
             
             //Buscar usuario por su token
             $usuario = Usuario::where('token',$token);
-            debuguear($usuario);
+            
 
             if(empty($usuario)){
                 Usuario::setAlerta('error', 'Token no valido');
@@ -117,7 +117,7 @@ class LoginController{
             if($_SERVER['REQUEST_METHOD'] === 'POST'){ //leer el nuevo password y guradarlo
                 
                 if($_POST['accion'] === 'miss'){                
-
+                    debuguear($usuario);
                     $password = new Usuario($_POST);
                     
                     $alertas =  $password->validarPassword();

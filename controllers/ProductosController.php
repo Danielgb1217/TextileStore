@@ -39,7 +39,10 @@ class ProductosController{
         // }
 
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
-                //Aqui puedo pasar las validaciones necesarias
+                
+            if ($_POST['accion'] === 'registrar'){         
+            
+                 //Aqui puedo pasar las validaciones necesarias
                 $producto->sincronizar($_POST);          
 
                 //Asignar Files a una Variable -----------------------------------SUBIDA DE ARCHIVOS-----------------------------
@@ -74,6 +77,8 @@ class ProductosController{
                 }
 
             }
+
+        }
 
             isAuth();
             isAdmin();  //si el usuario no es administrados bloquea el enrutamiento a la pagina

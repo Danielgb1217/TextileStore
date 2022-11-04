@@ -142,7 +142,7 @@ class LoginController{
                 Usuario::setAlerta('error', 'Token no valido');
                 $error = true;
             }  
-
+//estaba enviando el objeto usuario y no funcionada tuve que enviar solo el atributo id del objeto???estaba enviadno unarreglo??
             $alertas = Usuario::getAlertas();
             $router->render('auth/missAcount', 
             ['alertas' => $alertas, 

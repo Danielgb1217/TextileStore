@@ -107,7 +107,6 @@ class LoginController{
             //Buscar usuario por su token
             $usuario = Usuario::where('token',$token);
 
-    debuguear($usuario);
 
             if(empty($usuario)){
                 Usuario::setAlerta('error', 'Token no valido');
@@ -119,16 +118,18 @@ class LoginController{
                 
                 if($_POST['accion'] === 'miss'){                
 //debuguear($_POST);
-                    $password = new Usuario($_POST);
+                    $password = $_POST['password'];
                     $alertas =  $password->validarPassword();
     
                     //UNA COSA ES MI USUARIO ESPEJ DE LA BASE DE DATOS-->$usuario<-- Y OTRA ES EL USUARIO CREADO DEL FORMULARIO POST -->$password<--
                     if(empty($alertas)){    //Si pasamos la validadcion el arreglo de alertas estara vacio y podemos hashear el password
                         $usuario->password = ' ';  //borro el password viejo
             
-                        $usuario->password = $password->password;     //sobreescribo el passwor que e traigo por el metodo post del frm
+                        $usuario->password = $password;     //sobreescribo el passwor que e traigo por el metodo post del frm
                         //$usuario->hashPassword();
                         $usuario->token = null;
+    debuguear($usuario);
+
                         $resultado = $usuario->guardar();
                         if($resultado){
                             header('Location: /');

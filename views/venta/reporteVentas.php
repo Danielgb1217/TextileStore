@@ -109,7 +109,7 @@ function NbLines($w,$txt)
 function Header()  //Encabeza que se repite en todas las paginas
 {
     $this->SetFont('Times','B',32);
-    $this->Image('../public\build\img\kalen.PNG',10,8,70);
+    $this->Image('..\public\build\img\kalen.PNG',10,8,70);
     
     $this->setXY(80,10);     //Ubica la posicion donde va a ir el texto---->Titulo del Reporte
     

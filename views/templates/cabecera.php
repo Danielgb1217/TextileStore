@@ -1,7 +1,9 @@
 <div class="compras">
     <a href="/nuestrosProductos"><h1>Textile Store<i class="fa-solid fa-store fa-"></i></h1></a>
-    <a href=/carritoCompras>Carrito de Compras 
-    <i class="fa-solid fa-cart-arrow-down fa-2xl"></i></a>     
+    <div class="carrito, centrar">
+        <a href=/carritoCompras>Carrito de Compras 
+        <i class="fa-solid fa-cart-arrow-down fa-2xl"></i></a>      
+    </div>   
     <?php       //condicion para validar el tipo de usuario logueado y permitir ocultar el panel de administracion
     $tipoUsuario = '';
     if($_SESSION['admin'] === '1'){

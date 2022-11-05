@@ -95,18 +95,18 @@ ob_start();
             </table>
             <div>
             
-                    <tr>
-                        <td COLSPAN=4 >IVA:</td>
-                        <td COLSPAN=4 ><?php echo number_format($subtotal*0.19); ?></td> 
-                    </tr>
-                    <tr>
-                        <td COLSPAN=4 >SubTotal:</td>
-                        <td COLSPAN=4 ><?php echo number_format($subtotal); ?></td> 
-                    </tr>
-                    <tr>
-                        <td COLSPAN=4 ><p><strong>Total a Pagar:</strong></p></td>
-                        <td COLSPAN=4 ><p><strong><?php echo number_format(($subtotal*0.19)+$subtotal); ?></strong></p></td> 
-                    </tr>
+                <div>
+                    <p>IVA:</p> 
+                    <p><?php echo number_format($subtotal*0.19); ?></p> 
+                </div>
+                <div>
+                    <p>SubTotal:</p>
+                    <p><?php echo number_format($subtotal); ?></p> 
+                </div>
+                <div>
+                    <p><strong>Total a Pagar:</strong></p>
+                    <p><strong><?php echo number_format(($subtotal*0.19)+$subtotal); ?></strong></p> 
+                </div>
                   
             </div>
     </main>

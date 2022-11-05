@@ -19,6 +19,7 @@
                 <diV class="fila-tabla">
                     <div>
                         <div class="td">
+                            _____________________________________________
                             <p>Color: <?php echo $producto->color; ?> </p>
                         </div>
                         <div class="td">                

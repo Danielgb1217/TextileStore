@@ -94,7 +94,7 @@
                                 <form method="POST" action="/configurarUsuarios" >
                                     <input type="hidden" name="id" value="<?php echo $usuario->id??0; ?>">
                                     <!-- <input type="submit" name="accion" value="Eliminar">   -->
-                                    <button type="submit"  name="accion" class="boton-pedido" value="eliminar">
+                                    <button type="submit"  name="accion" class="boton-usuario" value="eliminar">
                                         <i class="fa-solid fa-trash-can">
                                         </i>Eliminar</button>                          
                                 </form>
@@ -105,7 +105,7 @@
                                 </form>  -->
                                 <form method="POST" action="/updateUsuario"> 
                                     <input type="hidden" name="id" value="<?php echo $usuario->id??0; ?>"> 
-                                    <button type="submit" class="boton-pedido" name="action" value="actualizar">
+                                    <button type="submit" class="boton-usuario" name="action" value="actualizar">
                                     <i class="fa-solid fa-pen-to-square fa-xs"></i>Actualizar</button>
                                 </form>                                 
 

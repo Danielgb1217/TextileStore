@@ -117,7 +117,7 @@
             
      
                 <h3>Productos</h3>
-                    <div class="grid-dos">                 
+                    <div class="grid-venta">                 
 
                         <?php 
                         $count = 0; 

@@ -57,7 +57,7 @@ ob_start();
                     <th>Cantidad</th>
                     <th>Fecha de Compra</th>
                     <th>Costo Unidad</th>
-                    <th>Costo Total</th>
+                    <!-- <th>Costo Total</th> -->
                 </tr>
             </thead>
 
@@ -91,9 +91,10 @@ ob_start();
                     $subtotal = $costoTotal + $subtotal;                              
                 ?>
                 <?php endforeach; ?>
-                </tbody>
-                
-                <tfoot>
+                </tbody>         
+            </table>
+            <div>
+            
                     <tr>
                         <td COLSPAN=4 >IVA:</td>
                         <td COLSPAN=4 ><?php echo number_format($subtotal*0.19); ?></td> 
@@ -106,8 +107,8 @@ ob_start();
                         <td COLSPAN=4 ><p><strong>Total a Pagar:</strong></p></td>
                         <td COLSPAN=4 ><p><strong><?php echo number_format(($subtotal*0.19)+$subtotal); ?></strong></p></td> 
                     </tr>
-                </tfoot>       
-        </table>
+                  
+            </div>
     </main>
         <div>
             <form method="POST" action="/resumenVenta" >
